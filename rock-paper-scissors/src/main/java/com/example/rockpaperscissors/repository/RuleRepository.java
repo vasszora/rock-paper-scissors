@@ -2,7 +2,7 @@ package com.example.rockpaperscissors.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.rockpaperscissors.domain.Rule;
+import com.example.rockpaperscissors.model.Rule;
 
 import java.util.List;
 

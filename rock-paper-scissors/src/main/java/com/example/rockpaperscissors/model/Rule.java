@@ -1,4 +1,4 @@
-package com.example.rockpaperscissors.domain;
+package com.example.rockpaperscissors.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
