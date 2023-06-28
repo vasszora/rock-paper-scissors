@@ -1,3 +1,3 @@
-INSERT INTO rules (beats, name) VALUES ('rock', 'paper');
-INSERT INTO rules (beats, name) VALUES ('paper', 'scissors');
-INSERT INTO rules (beats, name) VALUES ('scissors', 'rock');
+INSERT INTO rules (beats, name) VALUES ('ROCK', 'PAPER');
+INSERT INTO rules (beats, name) VALUES ('PAPER', 'SCISSORS');
+INSERT INTO rules (beats, name) VALUES ('SCISSORS', 'ROCK');

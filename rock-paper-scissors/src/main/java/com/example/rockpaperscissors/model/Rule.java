@@ -1,6 +1,8 @@
 package com.example.rockpaperscissors.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +22,10 @@ public class Rule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String beats;
+
+    @Enumerated(EnumType.STRING)
+    private Hand name;
+
+    @Enumerated(EnumType.STRING)
+    private Hand beats;
 }

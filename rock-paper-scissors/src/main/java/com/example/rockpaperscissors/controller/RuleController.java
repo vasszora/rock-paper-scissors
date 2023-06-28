@@ -20,9 +20,4 @@ public class RuleController {
     public List<Rule> findAll() {
         return ruleService.getRules();
     }
-
-    // @GetMapping(value = "/name/{name}")
-    // public List<Rule> findByName(@PathVariable String name) {
-    // return ruleService.getRuleByName(name);
-    // }
 }

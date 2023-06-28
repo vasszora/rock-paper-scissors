@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Result {
     private boolean userWon;
-    private String computerHand;
-    private String userHand;
+    private Hand computerHand;
+    private Hand userHand;
     private Optional<Rule> rule;
 
-    public Result(boolean userWon, String computerHand, String userHand) {
+    public Result(boolean userWon, Hand computerHand, Hand userHand) {
         this.userWon = userWon;
         this.computerHand = computerHand;
         this.userHand = userHand;

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.rockpaperscissors.model.Hand;
 import com.example.rockpaperscissors.model.Result;
 import com.example.rockpaperscissors.model.Rule;
 import com.example.rockpaperscissors.service.RuleService;
@@ -20,12 +21,12 @@ public class PlayController {
 
     @PostMapping
     public Result play(@RequestParam(required = false) boolean explain, @RequestParam String userHand) {
+        Hand computerHand = Hand.randomHand();
         if (explain) {
             Rule rule = ruleService.getRuleByName(userHand);
-            String computerHand = "paper";
             boolean userWon = (rule.getBeats().equals(computerHand));
-            return new Result(userWon, computerHand, userHand, Optional.of(rule));
+            return new Result(userWon, computerHand, Hand.valueOf(userHand.toUpperCase()), Optional.of(rule));
         }
-        return new Result(true, "paper", userHand);
+        return new Result(true, computerHand, Hand.valueOf(userHand));
     }
 }
