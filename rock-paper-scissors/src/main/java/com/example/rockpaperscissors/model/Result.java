@@ -1,7 +1,5 @@
 package com.example.rockpaperscissors.model;
 
-import java.util.Optional;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
