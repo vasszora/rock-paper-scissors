@@ -20,13 +20,14 @@ public class PlayController {
     private RuleService ruleService;
 
     @PostMapping
-    public Result play(@RequestParam(required = false) boolean explain, @RequestParam String userHand) {
+    public Result play(@RequestParam(required = false) boolean explain,
+            @RequestParam(name = "userHand") Hand userHand) {
         Hand computerHand = Hand.randomHand();
+        Rule rule = ruleService.getRuleByName(userHand);
+        boolean userWon = (rule.getBeats().equals(computerHand));
         if (explain) {
-            Rule rule = ruleService.getRuleByName(userHand);
-            boolean userWon = (rule.getBeats().equals(computerHand));
-            return new Result(userWon, computerHand, Hand.valueOf(userHand.toUpperCase()), Optional.of(rule));
+            return new Result(userWon, computerHand, userHand, rule);
         }
-        return new Result(true, computerHand, Hand.valueOf(userHand));
+        return new Result(userWon, computerHand, userHand);
     }
 }

@@ -13,7 +13,7 @@ public class Result {
     private boolean userWon;
     private Hand computerHand;
     private Hand userHand;
-    private Optional<Rule> rule;
+    private Rule rule;
 
     public Result(boolean userWon, Hand computerHand, Hand userHand) {
         this.userWon = userWon;

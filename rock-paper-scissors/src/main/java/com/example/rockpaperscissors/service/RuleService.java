@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.rockpaperscissors.model.Hand;
 import com.example.rockpaperscissors.model.Rule;
 import com.example.rockpaperscissors.repository.RuleRepository;
 
@@ -17,7 +18,7 @@ public class RuleService {
         return ruleRepository.findAll();
     }
 
-    public Rule getRuleByName(String name) {
+    public Rule getRuleByName(Hand name) {
         return ruleRepository.findByName(name).get(0);
     }
 }
